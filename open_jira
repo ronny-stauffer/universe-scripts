@@ -1,0 +1,10 @@
+#!/bin/bash
+
+branchName=$(git rev-parse --abbrev-ref HEAD)
+jiraIssueKey=$(echo $branchName | cut -f2 -d "/")
+
+jiraIssueURL="http://issues.sbb.ch/browse/$jiraIssueKey"
+
+#echo $jiraIssueURL
+
+exec cmd.exe /c "start $jiraIssueURL"

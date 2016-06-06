@@ -1,0 +1,27 @@
+#!/bin/bash
+
+userAgent="Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US))"
+
+# Determine Git & Stash repository URL
+#gitRepositoryURL=$(git config --get remote.origin.url)
+gitRepositoryURL=$(git ls-remote --get-url origin)
+if [ "$gitRepositoryURL" == "origin" ]; then
+	echo "Not in a Git repository!"
+	exit -1
+fi
+#echo "Git Repository URL: $gitRepositoryURL"
+stashRepositoryURL=$(wget --user-agent="$userAgent" -O /dev/null $gitRepositoryURL 2>&1 | awk '/Location: (.*)/ { print $2 }')
+#echo "Stash Repository URL: $stashRepositoryURL"
+# Remove '/browse' (from the end of the Stash Repository URL)
+stashRepositoryBaseURL=$(echo $stashRepositoryURL | sed -e "s/\/browse//")
+#echo "Stash Repository Base URL: $stashRepositoryBaseURL"
+
+# Determine branch name
+branchName=$(git rev-parse --abbrev-ref HEAD)
+
+# Build Stash diff URL
+stashDiffURL="$stashRepositoryBaseURL/compare/commits?sourceBranch=refs/heads/$branchName"
+
+#echo $stashDiffURL
+
+exec cmd.exe /c "start $stashDiffURL"
