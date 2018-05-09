@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export JAVA_HOME=/C/progs/azul_systems_zulu/8.28.0.1
+export PATH=/C/progs/azul_systems_zulu/8.28.0.1/bin:$PATH
