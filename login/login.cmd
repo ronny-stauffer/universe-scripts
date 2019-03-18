@@ -63,6 +63,10 @@ rem Map build space drive
 subst u: /d > nul
 subst u: %DATA_ROOT_DIR%\in_process\local\wir-entwickeln\build > nul
 
+rem Map YouTube media drive (used by Kodi)
+net use x: /delete > nul
+net use x: \\10.20.34.210\youtube_media /persistent:no
+
 rem sleep 10
 
 rem Start scheduled tasks
