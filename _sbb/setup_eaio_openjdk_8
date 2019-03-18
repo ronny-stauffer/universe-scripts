@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export JAVA_HOME=/C/devsbb/eaio-ng/jdk/openjdk8
+export PATH=/C/devsbb/eaio-ng/jdk/openjdk8/bin:$PATH
