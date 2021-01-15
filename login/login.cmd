@@ -28,10 +28,6 @@ rem Map wir-entwickeln global data drive
 subst l: /d > nul
 subst l: %DATA_ROOT_DIR%\in_process\replicated\wir-entwickeln\data\common\wir-entwickeln > nul
 
-rem Map common data drive
-subst m: /d > nul
-subst m: %DATA_ROOT_DIR%\in_process\replicated\wir-entwickeln\media > nul
-
 rem Map workspace drive
 subst o: /d > nul
 subst o: %DATA_ROOT_DIR%\in_process\local\wir-entwickeln\work\%username% > nul
