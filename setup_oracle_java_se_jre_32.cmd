@@ -1,4 +1,4 @@
 @echo off
 
-set JAVA_HOME=c:\progs\oracle_java_se_jre_32\7u10
-set PATH=c:\progs\oracle_java_se_jre_32\7u10\bin;%PATH%
+set JAVA_HOME=d:\progs\oracle_java_se_jre_32\8u201
+set PATH=d:\progs\oracle_java_se_jre_32\8u201\bin;%PATH%
